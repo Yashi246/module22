@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Employee Management System</title>
+        <script src="employee.js" type="text/javascript"></script>
+    </head>
+    <body>
+    <form name="emp">
+        <table>
+            <tr>
+                <td>
+                        Employee Id
+                </td>
+                <td><input type="text" id="empid"name="eid"/></td>
+                
+            </tr>
+            <tr>
+                <td>
+                    Employee Name
+                </td>
+                <td><input type="text" id ="empname" name="ename"/></td>
+
+            </tr>
+         
+                <tr>
+                    <td>
+                        course
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="emc" name="emco" value= "JAVA"> JAVA</td>
+
+                </tr>
+                <tr>
+                        <td><input type="checkbox" id="emc" name="emco" value= ".NET"> .Net</td>
+    
+                    </tr>
+                    <tr>
+                            <td><input type="checkbox" id="emc" name="emco" value= "Pega"> Pega</td>
+        
+                        </tr>
+                        <tr>
+                                <td><input type="checkbox" id="emc" name="emco" value= "SalesForce"> SalesForce</td>
+            
+                            </tr>
+                            <tr>
+                                    <td>Qualification</td>
+                                    <td>
+                                        <select id="qual">
+                                            <option value ="BCA" >BCA</option>
+                                            <option value ="MCA" >MCA</option>
+                                            <option value ="BE" >BE</option>
+
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Online</td>
+                                    <td><input type = "radio" name="online" value="yes">yes</td>
+                                    <td><input type = "radio" name="online" value="no">no</td>
+                                </tr>
+                                                            
+            <tr>
+                    <td>
+                            <input type="button" value="Add employee" onclick="addEmployee()"/>
+                    </td>
+                </tr>
+               
+
+        </table>
+    </form>
+    </body>
+</html>
+===============================================================================================================================================================================
+function addEmployee(){
+    
+    var s= "";
+  var employeeId= document.getElementById('empid').value;
+  var employeeName = document.getElementById('empname').value;
+ var employeecourse =document.getElementsByName('emco');
+var employeeQualification = document.emp.qual.value;
+ var online = document.emp.online.value;
+ for(var i=0;i<employeecourse.length;i++)
+ {
+     if(employeecourse[i].checked)
+     {
+         s= s+", "+employeecourse[i].value;
+     }
+ }
+  
+  
+
+  alert(employeeId+"\n "+employeeName+"\n "+s+"\n "+employeeQualification+"\n"+online);
+}

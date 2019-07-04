@@ -1,0 +1,42 @@
+export class IEmployee{
+    empId:number;
+    empName:string;
+    empSalary:number;
+    empStatus:boolean;
+}
+
+import { IEmployee } from "./Employee";
+var empall:IEmployee[]=[
+{empId:1001, empName:"yashi", empSalary:380000, empStatus:true},
+{empId:1001, empName:"nikhil", empSalary:380000, empStatus:true},
+{empId:1001, empName:"mooo", empSalary:380000, empStatus:true},
+{empId:1001, empName:"mew", empSalary:380000, empStatus:true}];
+empall.push({empId:2000, empName:"pain", empSalary:100000.00, empStatus:true});
+empall.splice(1,1);
+for(let data of empall){
+console.log(data.empId+" "+data.empName+" "+data.empSalary+" "+data.empStatus);
+
+}
+
+================================================================================================
+export class IProduct{
+    pId:number;
+    pName:string;
+    pPrice:number;
+}
+================================================================================================
+import { IProduct } from "./IProduct";
+var pro:IProduct[]=[
+{pId:1001, pName:"yashi", pPrice:380000},
+{pId:1003, pName:"kashi", pPrice:380001}]
+pro.push({pId:2000, pName:"pain", pPrice:100000.00});
+pro.splice(1,1);
+let profind = pro.filter(pro1=>pro1.pId==1001);
+console.log(profind);
+{
+    console.log("true");
+}
+for(let data of pro){
+console.log(data.pId+" "+data.pName+" "+data.pPrice+" ");
+
+}
